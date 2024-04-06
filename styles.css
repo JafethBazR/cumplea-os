@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.tarjeta {
+    background-color: #ffd700;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Para que las velas no salgan fuera de la tarjeta */
+}
+
+.tarjeta:hover {
+    background-color: #ff6347;
+}
+
+.mensaje {
+    text-align: center;
+}
+
+.velas {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.llama {
+    width: 10px;
+    height: 40px;
+    background-color: #ff3f00;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: flame 1s infinite alternate-reverse;
+}
+
+@keyframes flame {
+    from {
+        height: 20px;
+        opacity: 1;
+    }
+    to {
+        height: 40px;
+        opacity: 0.5;
+    }
+}
+
+/* Ajustes para las llamas */
+.velas .llama:nth-child(2) {
+    left: calc(50% - 20px);
+}
+
+.velas .llama:last-child {
+    left: calc(50% + 20px);
+}
+
+.gif {
+    width: 100%;
+    height: auto;
+}
+
+.audio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.playpause-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-right: 10px;
+}
